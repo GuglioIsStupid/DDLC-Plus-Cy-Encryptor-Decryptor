@@ -6,7 +6,7 @@ This tool can decrypt and reencrypt DDLC+'s .cy files
 
 ## What is a .cy file?
 
-A .cy file is a encrypted .unity3d file that contains game assets, it uses the encryption key \0x28 or decimal 40.
+A .cy file is a encrypted .unity3d file that contains game assets, it uses the encryption key \0x28 or decimal 40. (Atleast for DDLC+)
 
 ## How to use?
 
