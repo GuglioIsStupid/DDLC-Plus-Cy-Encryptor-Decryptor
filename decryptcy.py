@@ -1,4 +1,5 @@
 import sys, os, json
+from PIL import Image
 try:
     import UnityPy as up
 except ImportError:
@@ -33,10 +34,15 @@ def main():
 def extract_unity3d_file(path):
     env = up.load(path)
     for obj in env.objects:
-        if obj.type.name in ["Texture2D", "Sprite"]:
+        if obj.type.name == "Texture2D":
             data = obj.read()
             img = data.image
-            img.save(os.path.join(os.path.dirname(path), 'Decrypted', data.name))
+            data.image.save(os.path.join(os.path.dirname(path), 'Decrypted', f"{data.name}.png"))
+            # edit the image 
+            fp = os.path.join(os.path.dirname(path), 'Decrypted', f"{data.name}.png")
+            pil_img = Image.open(fp)
+            data.image = pil_img
+            data.save()
         elif obj.type.name == "TextAsset":
             data = obj.read()
             with open(os.path.join(os.path.dirname(path), 'Decrypted', data.name), 'wb') as f:
@@ -60,6 +66,8 @@ def extract_unity3d_file(path):
                     f.write(data)
         elif obj.type.name == "Font":
             font = obj.read()
+            extension = ".ttf"
+
             if font.m_FontData:
                 extension = ".ttf"
                 if font.m_FontData.startswith(b'OTTO'):
@@ -71,12 +79,6 @@ def extract_unity3d_file(path):
             mesh = obj.read()
             with open(os.path.join(os.path.dirname(path), 'Decrypted', f"{mesh.name}.obj"), 'w') as f:
                 f.write(mesh.to_obj())
-        elif obj.type.name == "Shader":
-            shader = obj.read()
-            with open(os.path.join(os.path.dirname(path), 'Decrypted', f"{shader.name}.shader"), 'w') as f:
-                f.write(shader.source)
-
-             
 
 
 if __name__ == '__main__':
