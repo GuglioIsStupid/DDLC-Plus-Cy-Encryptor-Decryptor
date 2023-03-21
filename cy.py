@@ -1,7 +1,12 @@
-import sys, os, UnityPy as up, json
+import sys, os, json
+try:
+    import UnityPy as up
+except ImportError:
+    print('UnityPy not found. Please install UnityPy.')
+    sys.exit(1)
 # .cy files are files used in ddlc+ that use the encryption key of \x28 or decimal 40
-# using the decryption key \x28 or decimal 40, it do an XOR decryption (which is in fact an XOR reencrytion) on every .cy file and save them into [path to cy files]\Decrypted\[file_name].unity3d
-# the decrypted files are then loaded into UnityPy and the files are extracted
+# using the decryption key \x28 or decimal 40, it uses an XOR decryption on every .cy file and save them into a new file with the extension .unity3d
+# the decrypted files are then extracted using UnityPy
 
 def decrypt_cy_file(path):
     with open(path, 'rb') as f:
