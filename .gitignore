@@ -2,5 +2,7 @@
 *.wav
 *.json
 *.unity3d
+*.unity3d.meta
+*.unity3d-decompressed
 
 Decrypted
