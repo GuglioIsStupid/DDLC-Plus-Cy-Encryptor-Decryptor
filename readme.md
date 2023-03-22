@@ -22,7 +22,7 @@ A .cy file is a encrypted .unity3d file that contains game assets, it uses the e
 ### Encrypting
 1. Download the latest release from [here](https://github.com/GuglioIsStupid/DDLC-Plus-Cy-Encryptor-Decryptor/releases/latest)
 2. Extract the zip file
-3. Drag and drop the .unity3d file you want to decrypt/encrypt on the .py
+3. Drag and drop the .unity3d file you want to decrypt/encrypt on the encryptunity3d.py 
 4. Wait for the process to finish
 5. Replace the file in the StreamingAssets/AssetBundles folder
 6. Enjoy!
