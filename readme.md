@@ -26,3 +26,18 @@ A .cy file is a encrypted .unity3d file that contains game assets, it uses the e
 4. Wait for the process to finish
 5. Replace the file in the StreamingAssets/AssetBundles folder
 6. Enjoy!
+
+<img src="readme/img1.jpg">
+
+Managed to replace the Jukebox image with a custom one, and it worked perfectly
+
+## Requirements
+
+- Python 3.8
+- UnityPy
+
+## Disclaimer
+Moddding games MAY break your game, I am not responsible for any damage caused by this tool.
+
+## License
+These scripts are licensed under the GNU General Public License v3.0
