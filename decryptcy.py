@@ -15,6 +15,8 @@ def decrypt_cy_file(path):
     data = bytearray(data)
     for i in range(len(data)):
         data[i] ^= 0x28
+    # path = path without .cy extension
+    path = os.path.splitext(path)[0]
     with open(path + '.unity3d', 'wb') as f:
         f.write(data)
 

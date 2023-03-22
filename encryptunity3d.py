@@ -7,6 +7,8 @@ def encrypt_unity3d_file(file):
     data = bytearray(data)
     for i in range(len(data)):
         data[i] ^= 0x28
+    # file = file with .unity3d extension
+    file = os.path.splitext(file)[0]
     with open(file + '.cy', 'wb') as f:
         f.write(data)
 
