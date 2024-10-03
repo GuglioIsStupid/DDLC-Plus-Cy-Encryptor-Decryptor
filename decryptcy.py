@@ -1,13 +1,14 @@
 import sys, os, json
 from PIL import Image
-try:
+"""try:
     import UnityPy as up
 except ImportError:
     print('UnityPy not found. Please install UnityPy.')
     sys.exit(1)
+"""
 # .cy files are files used in ddlc+ that use the encryption key of \x28 or decimal 40
 # using the decryption key \x28 or decimal 40, it uses an XOR decryption on every .cy file and save them into a new file with the extension .unity3d
-# the decrypted files are then extracted using UnityPy
+# the decrypted files are then extracted using UnityPy (removed, because why?)
 
 def decrypt_cy_file(path):
     with open(path, 'rb') as f:
@@ -20,7 +21,7 @@ def decrypt_cy_file(path):
     with open(path + '.unity3d', 'wb') as f:
         f.write(data)
 
-    extract_unity3d_file(path + '.unity3d')
+    # extract_unity3d_file(path + '.unity3d')
 
 def main():
     file = sys.argv[1]
@@ -32,7 +33,7 @@ def main():
                 decrypt_cy_file(os.path.join(file, f))
     else:
         print('Invalid path')
-
+"""
 def extract_unity3d_file(path):
     env = up.load(path)
     for obj in env.objects:
@@ -81,7 +82,7 @@ def extract_unity3d_file(path):
             mesh = obj.read()
             with open(os.path.join(os.path.dirname(path), 'Decrypted', f"{mesh.name}.obj"), 'w') as f:
                 f.write(mesh.to_obj())
-
+"""
 
 if __name__ == '__main__':
     # make Decrypted folder
