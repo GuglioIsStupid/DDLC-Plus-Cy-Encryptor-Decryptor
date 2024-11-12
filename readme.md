@@ -13,11 +13,10 @@ A .cy file is a encrypted .unity3d file that contains game assets, it uses the e
 ### Decrypting
 1. Download the latest release from [here](https://github.com/GuglioIsStupid/DDLC-Plus-Cy-Encryptor-Decryptor/releases/latest)
 2. Extract the zip file
-3. Install UnityPy `pip install UnityPy`
-4. Drag and drop the .cy file you want to decrypt/encrypt on decryptcy.py 
-5. Wait for the process to finish
-6. Open it with a program like [UABE](https://github.com/SeriousCache/UABE)
-7. Enjoy!
+3. Drag and drop the .cy file you want to decrypt/encrypt on decryptcy.py 
+4. Wait for the process to finish
+5. Open it with a program like [UABE](https://github.com/SeriousCache/UABE)
+6. Enjoy!
 
 ### Encrypting
 1. Download the latest release from [here](https://github.com/GuglioIsStupid/DDLC-Plus-Cy-Encryptor-Decryptor/releases/latest)
